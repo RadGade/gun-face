@@ -1,0 +1,25 @@
+{
+  "name": "outtake",
+  "browserslist": [
+    "last 1 Chrome versions"
+],
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4"
+  },
+  "scripts": {
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "dependencies": {
+    "@tensorflow-models/facemesh": "^0.0.1",
+    "@tensorflow/tfjs-converter": "^1.7.2",
+    "@tensorflow/tfjs-core": "^1.7.2",
+    "gun": "^0.2020.401",
+    "multistreamsmixer": "^1.2.2",
+    "nerdy-cat-names": "^1.0.0",
+    "stats.js": "^0.17.0"
+  }
+}

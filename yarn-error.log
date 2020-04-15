@@ -1,0 +1,41 @@
+Arguments: 
+  C:\Program Files\nodejs\node.exe C:\Users\Skyfall\AppData\Roaming\npm\node_modules\yarn\bin\yarn.js add parcel-builder --dev
+
+PATH: 
+  C:\Program Files (x86)\Common Files\Oracle\Java\javapath;C:\WINDOWS\system32;C:\WINDOWS;C:\WINDOWS\System32\Wbem;C:\WINDOWS\System32\WindowsPowerShell\v1.0\;C:\WINDOWS\System32\OpenSSH\;C:\Program Files (x86)\Windows Kits\10\Windows Performance Toolkit\;C:\Program Files\PuTTY\;C:\Go\bin;C:\Program Files (x86)\Livestreamer;C:\Program Files\Git\cmd;C:\Program Files\Git\mingw64\bin;C:\Program Files\Git\usr\bin;C:\ProgramData\chocolatey\bin;C:\Program Files (x86)\Google\Cloud SDK\google-cloud-sdk\bin;C:\Program Files\Docker\Docker\resources\bin;C:\ProgramData\DockerDesktop\version-bin;C:\Users\Skyfall\AppData\Roaming\nvm;C:\Program Files\nodejs;C:\Users\Skyfall\.windows-build-tools\python27\;C:\Users\Skyfall\.windows-build-tools\python27;C:\Users\Skyfall\AppData\Local\Microsoft\WindowsApps;C:\Users\Skyfall\AppData\Roaming\npm;C:\Users\Skyfall\AppData\Local\Programs\Microsoft VS Code\bin;C:\Users\Skyfall\flutter\bin;C:\Program Files (x86)\Nmap;C:\Windows\System32\wget.exe;C:\Users\Skyfall\go\bin;C:\Users\Skyfall\AppData\Local\hyper\app-3.0.2\resources\bin;C:\Users\Skyfall\Downloads\go-ipfs_v0.4.22_windows-amd64\go-ipfs;C:\Users\Skyfall\AppData\Local\Android\Sdk\platform-tools;C:\Program Files\Java\jdk-11.0.4\bin;C:\Users\Skyfall\ookla-speedtest-1.0.0-win64;C:\Users\Skyfall\AppData\Local\atom\bin;C:\Users\Skyfall\Pictures\thc-hydra-windows-master\thc-hydra-windows-master;C:\Program Files\MongoDB\Server\4.2\bin;C:\Users\Skyfall\AppData\Local\.meteor\;C:\Program Files\heroku\bin;C:\tools\dart-sdk\bin;C:\Users\Skyfall\AppData\Roaming\Pub\Cache\bin;E:\docker-17.06.2-ce\docker;C:\Users\Skyfall\Downloads\ffmpeg-20200206-343ccfc-win64-static\ffmpeg-20200206-343ccfc-win64-static\bin;C:\Users\Skyfall\lockBreaker\;C:\Users\Skyfall\AppData\Local\Programs\IPFS Desktop\resources\app.asar.unpacked\out\ipfs-on-path\scripts\bin-win;C:\Program Files (x86)\mitmproxy\bin;C:\Users\Skyfall\AppData\Local\Microsoft\WindowsApps;D:\php-7.4.3-Win32-vc15-x64;G:\sqlmapproject-sqlmap-1.4.3-11-g8ec165d\sqlmapproject-sqlmap-8ec165d;C:\Users\Skyfall\miniconda3\condabin;G:\shhh\exiftool-11.92;G:\robloxHackerone\pooler-cpuminer-2.5.0-win64;C:\Users\Skyfall\AppData\Roaming\nvm;C:\Program Files\nodejs
+
+Yarn version: 
+  1.17.3
+
+Node version: 
+  12.16.1
+
+Platform: 
+  win32 x64
+
+Trace: 
+  Error: https://registry.yarnpkg.com/parcel-builder: Not found
+      at Request.params.callback [as _callback] (C:\Users\Skyfall\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:66830:18)
+      at Request.self.callback (C:\Users\Skyfall\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:140464:22)
+      at Request.emit (events.js:311:20)
+      at Request.<anonymous> (C:\Users\Skyfall\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141436:10)
+      at Request.emit (events.js:311:20)
+      at IncomingMessage.<anonymous> (C:\Users\Skyfall\AppData\Roaming\npm\node_modules\yarn\lib\cli.js:141358:12)
+      at Object.onceWrapper (events.js:417:28)
+      at IncomingMessage.emit (events.js:323:22)
+      at endReadableNT (_stream_readable.js:1204:12)
+      at processTicksAndRejections (internal/process/task_queues.js:84:21)
+
+npm manifest: 
+  {
+    "name": "outtake",
+    "version": "1.0.0",
+    "main": "index.js",
+    "license": "MIT"
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
