@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const VIDEO_SIZE = 500;
 const stats = new Stats()
-let model, ctx, videoWidth, videoHeight, video, canvas,
+let model, ctx, videoWidth, videoHeight, video, canvas, user,
     scatterGLHasInitialized = false, scatterGL, stream, root
 
 async function cam () {
@@ -65,6 +65,7 @@ async function cam () {
 
 async function render() {
   var predictions = window.predictions
+  
     stats.begin();
      predictions = await (await model).estimateFaces(video)
     ctx.drawImage(
@@ -91,16 +92,25 @@ async function render() {
         scatterGLHasInitialized = true;
     }
 
+    let pointsData = predictions[0].scaledMesh
+    let data = { pointsData }
+    let done = JSON.stringify(data)
+
+
+
+     root.get('userPoints').get(user).put(done)
+
+  // console.log(JSON.stringify(data))
     stats.end();
     requestAnimationFrame(render);
   };
 
   async function main() {
-    const user = elFormName.value;
+     user = elFormName.value;
     await tf.setBackend('webgl');
     stats.showPanel(0);  // 0: fps, 1: ms, 2: mb, 3+: custom
     document.getElementById('main').appendChild(stats.dom);
-  
+
     await cam();
     video.play();
     videoWidth = video.videoWidth;
@@ -114,6 +124,11 @@ async function render() {
       rtc: { iceServers: await getICEServers() },
   })
 
+  await root.get('userPoints').set(user)
+
+  // root.get('userPoints').on((data, key) => {
+  //   console.log(data)
+  // })
     canvas = document.getElementById('output');
     canvas.width = videoWidth;
     canvas.height = videoHeight;
@@ -129,6 +144,7 @@ async function render() {
   
     model = await facemesh.load({maxFaces: 1});
     render();
+
     const text = document.createElement("h3");
     text.innerText = user;
     document.querySelector('#scatter-gl-container').appendChild(text)
@@ -140,6 +156,7 @@ async function render() {
           document.querySelector('#scatter-gl-container'),
           {'rotateOnStart': false, 'selectEnabled': false});
   };
+
 
 })
 

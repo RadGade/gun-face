@@ -31108,6 +31108,7 @@ document.addEventListener('DOMContentLoaded', () => {
       videoHeight,
       video,
       canvas,
+      user,
       scatterGLHasInitialized = false,
       scatterGL,
       stream,
@@ -31171,6 +31172,13 @@ document.addEventListener('DOMContentLoaded', () => {
       scatterGLHasInitialized = true;
     }
 
+    let pointsData = predictions[0].scaledMesh;
+    let data = {
+      pointsData
+    };
+    let done = JSON.stringify(data);
+    root.get('userPoints').get(user).put(done); // console.log(JSON.stringify(data))
+
     stats.end();
     requestAnimationFrame(render);
   }
@@ -31178,7 +31186,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ;
 
   async function main() {
-    const user = elFormName.value;
+    user = elFormName.value;
     await tf.setBackend('webgl');
     stats.showPanel(0); // 0: fps, 1: ms, 2: mb, 3+: custom
 
@@ -31195,6 +31203,10 @@ document.addEventListener('DOMContentLoaded', () => {
         iceServers: await getICEServers()
       }
     });
+    await root.get('userPoints').set(user); // root.get('userPoints').on((data, key) => {
+    //   console.log(data)
+    // })
+
     canvas = document.getElementById('output');
     canvas.width = videoWidth;
     canvas.height = videoHeight;
@@ -31250,7 +31262,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "39710" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "50784" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
