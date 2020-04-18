@@ -99,6 +99,7 @@ async function render() {
 
 
      root.get('userPoints').get(user).put(done)
+ 
 
   // console.log(JSON.stringify(data))
     stats.end();
@@ -126,9 +127,9 @@ async function render() {
 
   await root.get('userPoints').set(user)
 
-  // root.get('userPoints').on((data, key) => {
-  //   console.log(data)
-  // })
+  root.get('userPoints').on((data, key) => {
+    console.log("this is the  data " : data)
+  })
     canvas = document.getElementById('output');
     canvas.width = videoWidth;
     canvas.height = videoHeight;
