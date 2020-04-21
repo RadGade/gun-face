@@ -124,7 +124,7 @@ async function render() {
       peers: [`https://gun-matrix.herokuapp.com/gun`],
       rtc: { iceServers: await getICEServers() },
   })
-
+  await root.get('userPoints').put(null)
   await root.get('userPoints').set(user)
 
   root.get('userPoints').on((data, key) => {
